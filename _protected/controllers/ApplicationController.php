@@ -3,7 +3,10 @@
 namespace app\controllers;
 
 use app\models\Application;
-
+use app\models\UploadForm;
+use yii\web\UploadedFile;
+use Yii;
+ 
 class ApplicationController extends \yii\web\Controller
 {
     public function actionIndex()
@@ -11,27 +14,17 @@ class ApplicationController extends \yii\web\Controller
         return $this->render('index');
     }
 
-    public function actionAdd_form()
-    {
+
+    public function actionCreate()
+    {//var_dump(Yii::$app->request->post());die;
         $model = new Application();
-        return $this->render('add_form', ['model' => $model]);
-    }
-    
-    public function actionAdd()
-    {
-        if(isset($_POST['Application']))
-        {
-            $model = new Application;
-            $data = $_POST['Application'];
-            $model -> attributes = $data;
-            if($model->save()){
-                
-                $this->redirect(array('index'));
-            }
+        if ($model -> load(Yii::$app->request->post())){
+            $image = UploadedFile::getInstance($model, 'pic_file');
+            if ($model->save())
+                $model -> pic_file -> saveAs("uploads/application/" . $model -> id . '.jpg');
+            $this -> redirect(array('index'));
         }
-        $this->render('create',array(
-            'model'=>$model,
-        ));
-        return $this->render('index');
+        else
+            return $this->render('create', ['model' => $model]);
     }
 }

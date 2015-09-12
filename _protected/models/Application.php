@@ -30,7 +30,7 @@ class Application extends \yii\db\ActiveRecord
      * application picture
      * @var file
      */
-    private $file = NULL;
+    public $pic_file;
     
     /**
      * @inheritdoc
@@ -46,10 +46,13 @@ class Application extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required', 'message' => 'Не указано наименование'],
-            [['group_id'], 'required', 'integer', 'max' => count($this->groupList), 'message' => 'Не указана группа'],
+            [['name', 'group_id'], 'required', 'message' => 'Необходимо заполнить обязательное поле'],
             [['name'], 'string', 'max' => 255, 'message' => 'Слишком длинное наименование'],
-            [['pic'], 'file', 'extensions' => 'jpg', 'message' => 'Файл должен быть с расширением jpg']
+            [['group_id'], 'integer', 'max' => count($this -> groupList),'message' => 'Не указана группа'],
+            [['info'], 'string'],
+            [['pic'], 'integer'],
+            [['pic_file'], 'safe'],
+            [['pic_file'], 'image', 'extensions' => 'jpg', 'message' => 'Файл должен быть с расширением jpg']
         ];
     }
 
@@ -60,16 +63,20 @@ class Application extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'info' => 'Info',
-            'pic' => 'Pic',
+            'name' => 'Название',
+            'info' => 'Описание',
+            'group_id' => 'Группа',
+            'pic' => 'Изображение',
+            'pic_file' => 'Изображение'
         ];
     }
     
     public function beforeSave($insert)
-    {
-        if ($this -> pic){
-            $this -> file = UploadedFile::getInstance($this, 'file');
+    {//$this -> pic_file = UploadedFile::getInstance($this, 'pic_file');
+        //var_dump($this->pic_file); die;
+        if ($this -> pic_file){
+            //$this -> file = UploadedFile::getInstance($this, 'file');
+            //var_dump($this -> file);die;
             $this -> pic = 1;
         }
         else
@@ -77,11 +84,16 @@ class Application extends \yii\db\ActiveRecord
         return parent::beforeSave($insert);
     }
     
-    public function afterSave($insert)
+    public function afterSave($insert, $changedAttributes)
     {
-        if ($this -> file)
-            $this -> file->saveAs('uploads/' . $this -> file -> baseName . '.' . $this -> file -> extension);
-        return parent::afterSave($insert);
+        /*if ($this -> pic_file){
+            if (!is_dir("uploads/application")){
+                mkdir("uploads/application");
+                chmod("uploads/application", 777);
+            }
+            $this -> file->saveAs("uploads/application/" . $this -> id . '.jpg');
+        }*/
+        return parent::afterSave($insert, $changedAttributes);
     }
     
     /**

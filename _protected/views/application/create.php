@@ -9,18 +9,18 @@
 ?>
 <div class="application-add-form">
 
-    <?php $form = ActiveForm::begin(['id' => 'application-add-form']) ?>
+    <?php $form = ActiveForm::begin(['id' => 'application-add-form', 'options' => ['enctype' => 'multipart/form-data']]) ?>
 
-    <?= $form -> field($model, 'name');var_dump($model->name);die;?>
+    <?= $form -> field($model, 'name');?>
 
     <?= $form -> field($model, 'info') -> textarea() ?>
 
     <?= $form -> field($model, 'group_id') -> dropdownList($model -> groupList) ?>
 
-    <?= $form -> field($model, 'pic')-> fileInput() ?>
+    <?= $form -> field($model, 'pic_file') -> fileInput() ?>
 
     <div class="form-group">     
-        <?= Html::submitButton(Yii::t('app', 'Create'), ['btn btn-success']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Create'), ['class' => 'btn btn-success']) ?>
 
         <?= Html::a(Yii::t('app', 'Cancel'), ['/'], ['class' => 'btn btn-default']) ?>
     </div>
