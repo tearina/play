@@ -681,3 +681,547 @@ Array
     ]
     'argc' => 2
 ]
+2015-09-11 12:58:50 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1701 Cannot truncate a table referenced in a foreign key constraint (`play`.`application_to_group`, CONSTRAINT `fk_group_id` FOREIGN KEY (`group_id`) REFERENCES `play`.`group` (`id`))' in /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php:781
+Stack trace:
+#0 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php(781): PDOStatement->execute()
+#1 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Migration.php(297): yii\db\Command->execute()
+#2 /var/www/play.pe/_protected/console/migrations/m150911_122544_2.php(21): yii\db\Migration->truncateTable('{{%group}}')
+#3 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(520): m150911_122544_2->down()
+#4 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(185): yii\console\controllers\BaseMigrateController->migrateDown('m150911_122544_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionDown(1)
+#6 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('down', Array)
+#9 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('down', Array)
+#10 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('migrate/down', Array)
+#11 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate/down', Array)
+#12 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/play.pe/_protected/yii(25): yii\base\Application->run()
+#14 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1701 Cannot truncate a table referenced in a foreign key constraint (`play`.`application_to_group`, CONSTRAINT `fk_group_id` FOREIGN KEY (`group_id`) REFERENCES `play`.`group` (`id`))
+The SQL being executed was: TRUNCATE TABLE `group`' in /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'TRUNCATE TABLE ...')
+#1 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Migration.php(297): yii\db\Command->execute()
+#2 /var/www/play.pe/_protected/console/migrations/m150911_122544_2.php(21): yii\db\Migration->truncateTable('{{%group}}')
+#3 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(520): m150911_122544_2->down()
+#4 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(185): yii\console\controllers\BaseMigrateController->migrateDown('m150911_122544_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionDown(1)
+#6 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('down', Array)
+#9 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('down', Array)
+#10 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('migrate/down', Array)
+#11 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate/down', Array)
+#12 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/play.pe/_protected/yii(25): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1701
+    [2] => Cannot truncate a table referenced in a foreign key constraint (`play`.`application_to_group`, CONSTRAINT `fk_group_id` FOREIGN KEY (`group_id`) REFERENCES `play`.`group` (`id`))
+)
+
+2015-09-11 12:58:48 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'ru_RU.UTF-8'
+    'LC_ADDRESS' => 'ru_RU.UTF-8'
+    'XDG_SESSION_ID' => 'c2'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/kate'
+    'SELINUX_INIT' => 'YES'
+    'LC_MONETARY' => 'ru_RU.UTF-8'
+    'CLUTTER_IM_MODULE' => 'xim'
+    'GPG_AGENT_INFO' => '/run/user/1000/keyring-Zqwz4r/gpg:0:1'
+    'TERM' => 'xterm'
+    'VTE_VERSION' => '3409'
+    'SHELL' => '/bin/bash'
+    'WINDOWID' => '81788940'
+    'LC_NUMERIC' => 'ru_RU.UTF-8'
+    'UPSTART_SESSION' => 'unix:abstract=/com/ubuntu/upstart-session/1000/2715'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring-Zqwz4r'
+    'GTK_MODULES' => 'overlay-scrollbar:unity-gtk-module'
+    'USER' => 'kate'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+    'LC_TELEPHONE' => 'ru_RU.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring-Zqwz4r/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/ubuntu.default.path'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+    'QT_IM_MODULE' => 'ibus'
+    'QT_QPA_PLATFORMTHEME' => 'appmenu-qt5'
+    'LC_IDENTIFICATION' => 'ru_RU.UTF-8'
+    'PWD' => '/var/www/play.pe/_protected'
+    'JOB' => 'gnome-session'
+    'XMODIFIERS' => '@im=ibus'
+    'GNOME_KEYRING_PID' => '2713'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/ubuntu.mandatory.path'
+    'LC_MEASUREMENT' => 'ru_RU.UTF-8'
+    'COMPIZ_CONFIG_PROFILE' => 'ubuntu'
+    'IM_CONFIG_PHASE' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'SESSIONTYPE' => 'gnome-session'
+    'SHLVL' => '1'
+    'HOME' => '/home/kate'
+    'XDG_SEAT' => 'seat0'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'UPSTART_INSTANCE' => ''
+    'UPSTART_EVENTS' => 'started starting'
+    'LOGNAME' => 'kate'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-wMiSOa0gVJ'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/'
+    'QT4_IM_MODULE' => 'xim'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'INSTANCE' => 'Unity'
+    'TEXTDOMAIN' => 'im-config'
+    'UPSTART_JOB' => 'unity-settings-daemon'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Unity'
+    'GTK_IM_MODULE' => 'ibus'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'ru_RU.UTF-8'
+    'TEXTDOMAINDIR' => '/usr/share/locale/'
+    'LC_NAME' => 'ru_RU.UTF-8'
+    'XAUTHORITY' => '/home/kate/.Xauthority'
+    'COLORTERM' => 'gnome-terminal'
+    'OLDPWD' => '/var/www/play.pe'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1441976328.989
+    'REQUEST_TIME' => 1441976328
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/down'
+    ]
+    'argc' => 2
+]
+2015-09-11 13:16:48 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5' in /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php:781
+Stack trace:
+#0 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php(781): PDOStatement->execute()
+#1 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Migration.php(260): yii\db\Command->execute()
+#2 /var/www/play.pe/_protected/console/migrations/m150911_093700_0.php(23): yii\db\Migration->createTable('{{%application}...', Array, 'CHARACTER SET u...')
+#3 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(492): m150911_093700_0->up()
+#4 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(129): yii\console\controllers\BaseMigrateController->migrateUp('m150911_093700_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('', Array)
+#9 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('', Array)
+#10 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('migrate', Array)
+#11 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#12 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/play.pe/_protected/yii(25): yii\base\Application->run()
+#14 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5
+The SQL being executed was: CREATE TABLE `application` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar(255) NOT NULL,
+	`info` text,
+	`group` integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' in /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `a...')
+#1 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Migration.php(260): yii\db\Command->execute()
+#2 /var/www/play.pe/_protected/console/migrations/m150911_093700_0.php(23): yii\db\Migration->createTable('{{%application}...', Array, 'CHARACTER SET u...')
+#3 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(492): m150911_093700_0->up()
+#4 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(129): yii\console\controllers\BaseMigrateController->migrateUp('m150911_093700_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('', Array)
+#9 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('', Array)
+#10 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('migrate', Array)
+#11 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#12 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/play.pe/_protected/yii(25): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5
+)
+
+2015-09-11 13:16:46 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'ru_RU.UTF-8'
+    'LC_ADDRESS' => 'ru_RU.UTF-8'
+    'XDG_SESSION_ID' => 'c2'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/kate'
+    'SELINUX_INIT' => 'YES'
+    'LC_MONETARY' => 'ru_RU.UTF-8'
+    'CLUTTER_IM_MODULE' => 'xim'
+    'GPG_AGENT_INFO' => '/run/user/1000/keyring-Zqwz4r/gpg:0:1'
+    'TERM' => 'xterm'
+    'VTE_VERSION' => '3409'
+    'SHELL' => '/bin/bash'
+    'WINDOWID' => '81788940'
+    'LC_NUMERIC' => 'ru_RU.UTF-8'
+    'UPSTART_SESSION' => 'unix:abstract=/com/ubuntu/upstart-session/1000/2715'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring-Zqwz4r'
+    'GTK_MODULES' => 'overlay-scrollbar:unity-gtk-module'
+    'USER' => 'kate'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+    'LC_TELEPHONE' => 'ru_RU.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring-Zqwz4r/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/ubuntu.default.path'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+    'QT_IM_MODULE' => 'ibus'
+    'QT_QPA_PLATFORMTHEME' => 'appmenu-qt5'
+    'LC_IDENTIFICATION' => 'ru_RU.UTF-8'
+    'PWD' => '/var/www/play.pe/_protected'
+    'JOB' => 'gnome-session'
+    'XMODIFIERS' => '@im=ibus'
+    'GNOME_KEYRING_PID' => '2713'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/ubuntu.mandatory.path'
+    'LC_MEASUREMENT' => 'ru_RU.UTF-8'
+    'COMPIZ_CONFIG_PROFILE' => 'ubuntu'
+    'IM_CONFIG_PHASE' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'SESSIONTYPE' => 'gnome-session'
+    'SHLVL' => '1'
+    'HOME' => '/home/kate'
+    'XDG_SEAT' => 'seat0'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'UPSTART_INSTANCE' => ''
+    'UPSTART_EVENTS' => 'started starting'
+    'LOGNAME' => 'kate'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-wMiSOa0gVJ'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/'
+    'QT4_IM_MODULE' => 'xim'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'INSTANCE' => 'Unity'
+    'TEXTDOMAIN' => 'im-config'
+    'UPSTART_JOB' => 'unity-settings-daemon'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Unity'
+    'GTK_IM_MODULE' => 'ibus'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'ru_RU.UTF-8'
+    'TEXTDOMAINDIR' => '/usr/share/locale/'
+    'LC_NAME' => 'ru_RU.UTF-8'
+    'XAUTHORITY' => '/home/kate/.Xauthority'
+    'COLORTERM' => 'gnome-terminal'
+    'OLDPWD' => '/var/www/play.pe'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1441977406.9587
+    'REQUEST_TIME' => 1441977406
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2015-09-11 13:17:49 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5' in /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php:781
+Stack trace:
+#0 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php(781): PDOStatement->execute()
+#1 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Migration.php(260): yii\db\Command->execute()
+#2 /var/www/play.pe/_protected/console/migrations/m150911_093700_0.php(23): yii\db\Migration->createTable('{{%application}...', Array, 'CHARACTER SET u...')
+#3 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(492): m150911_093700_0->up()
+#4 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(129): yii\console\controllers\BaseMigrateController->migrateUp('m150911_093700_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('', Array)
+#9 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('', Array)
+#10 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('migrate', Array)
+#11 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#12 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/play.pe/_protected/yii(25): yii\base\Application->run()
+#14 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5
+The SQL being executed was: CREATE TABLE `application` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar(255) NOT NULL,
+	`info` text,
+	`group_id` integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' in /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `a...')
+#1 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Migration.php(260): yii\db\Command->execute()
+#2 /var/www/play.pe/_protected/console/migrations/m150911_093700_0.php(23): yii\db\Migration->createTable('{{%application}...', Array, 'CHARACTER SET u...')
+#3 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(492): m150911_093700_0->up()
+#4 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(129): yii\console\controllers\BaseMigrateController->migrateUp('m150911_093700_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('', Array)
+#9 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('', Array)
+#10 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('migrate', Array)
+#11 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#12 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/play.pe/_protected/yii(25): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5
+)
+
+2015-09-11 13:17:48 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'ru_RU.UTF-8'
+    'LC_ADDRESS' => 'ru_RU.UTF-8'
+    'XDG_SESSION_ID' => 'c2'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/kate'
+    'SELINUX_INIT' => 'YES'
+    'LC_MONETARY' => 'ru_RU.UTF-8'
+    'CLUTTER_IM_MODULE' => 'xim'
+    'GPG_AGENT_INFO' => '/run/user/1000/keyring-Zqwz4r/gpg:0:1'
+    'TERM' => 'xterm'
+    'VTE_VERSION' => '3409'
+    'SHELL' => '/bin/bash'
+    'WINDOWID' => '81788940'
+    'LC_NUMERIC' => 'ru_RU.UTF-8'
+    'UPSTART_SESSION' => 'unix:abstract=/com/ubuntu/upstart-session/1000/2715'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring-Zqwz4r'
+    'GTK_MODULES' => 'overlay-scrollbar:unity-gtk-module'
+    'USER' => 'kate'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+    'LC_TELEPHONE' => 'ru_RU.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring-Zqwz4r/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/ubuntu.default.path'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+    'QT_IM_MODULE' => 'ibus'
+    'QT_QPA_PLATFORMTHEME' => 'appmenu-qt5'
+    'LC_IDENTIFICATION' => 'ru_RU.UTF-8'
+    'PWD' => '/var/www/play.pe/_protected'
+    'JOB' => 'gnome-session'
+    'XMODIFIERS' => '@im=ibus'
+    'GNOME_KEYRING_PID' => '2713'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/ubuntu.mandatory.path'
+    'LC_MEASUREMENT' => 'ru_RU.UTF-8'
+    'COMPIZ_CONFIG_PROFILE' => 'ubuntu'
+    'IM_CONFIG_PHASE' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'SESSIONTYPE' => 'gnome-session'
+    'SHLVL' => '1'
+    'HOME' => '/home/kate'
+    'XDG_SEAT' => 'seat0'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'UPSTART_INSTANCE' => ''
+    'UPSTART_EVENTS' => 'started starting'
+    'LOGNAME' => 'kate'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-wMiSOa0gVJ'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/'
+    'QT4_IM_MODULE' => 'xim'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'INSTANCE' => 'Unity'
+    'TEXTDOMAIN' => 'im-config'
+    'UPSTART_JOB' => 'unity-settings-daemon'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Unity'
+    'GTK_IM_MODULE' => 'ibus'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'ru_RU.UTF-8'
+    'TEXTDOMAINDIR' => '/usr/share/locale/'
+    'LC_NAME' => 'ru_RU.UTF-8'
+    'XAUTHORITY' => '/home/kate/.Xauthority'
+    'COLORTERM' => 'gnome-terminal'
+    'OLDPWD' => '/var/www/play.pe'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1441977468.4913
+    'REQUEST_TIME' => 1441977468
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2015-09-11 13:20:17 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5' in /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php:781
+Stack trace:
+#0 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php(781): PDOStatement->execute()
+#1 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Migration.php(260): yii\db\Command->execute()
+#2 /var/www/play.pe/_protected/console/migrations/m150911_093700_0.php(23): yii\db\Migration->createTable('{{%application}...', Array, 'CHARACTER SET u...')
+#3 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(492): m150911_093700_0->up()
+#4 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(129): yii\console\controllers\BaseMigrateController->migrateUp('m150911_093700_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('', Array)
+#9 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('', Array)
+#10 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('migrate', Array)
+#11 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#12 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/play.pe/_protected/yii(25): yii\base\Application->run()
+#14 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5
+The SQL being executed was: CREATE TABLE `application` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar(255) NOT NULL,
+	`info` text,
+	`group_id` integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' in /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `a...')
+#1 /var/www/play.pe/_protected/vendor/yiisoft/yii2/db/Migration.php(260): yii\db\Command->execute()
+#2 /var/www/play.pe/_protected/console/migrations/m150911_093700_0.php(23): yii\db\Migration->createTable('{{%application}...', Array, 'CHARACTER SET u...')
+#3 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(492): m150911_093700_0->up()
+#4 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(129): yii\console\controllers\BaseMigrateController->migrateUp('m150911_093700_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('', Array)
+#9 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('', Array)
+#10 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('migrate', Array)
+#11 /var/www/play.pe/_protected/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#12 /var/www/play.pe/_protected/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/play.pe/_protected/yii(25): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integerNOT NULL,
+	`pic` tinyint(1)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ' at line 5
+)
+
+2015-09-11 13:20:14 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'ru_RU.UTF-8'
+    'LC_ADDRESS' => 'ru_RU.UTF-8'
+    'XDG_SESSION_ID' => 'c2'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/kate'
+    'SELINUX_INIT' => 'YES'
+    'LC_MONETARY' => 'ru_RU.UTF-8'
+    'CLUTTER_IM_MODULE' => 'xim'
+    'GPG_AGENT_INFO' => '/run/user/1000/keyring-Zqwz4r/gpg:0:1'
+    'TERM' => 'xterm'
+    'VTE_VERSION' => '3409'
+    'SHELL' => '/bin/bash'
+    'WINDOWID' => '81788940'
+    'LC_NUMERIC' => 'ru_RU.UTF-8'
+    'UPSTART_SESSION' => 'unix:abstract=/com/ubuntu/upstart-session/1000/2715'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring-Zqwz4r'
+    'GTK_MODULES' => 'overlay-scrollbar:unity-gtk-module'
+    'USER' => 'kate'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+    'LC_TELEPHONE' => 'ru_RU.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring-Zqwz4r/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/ubuntu.default.path'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+    'QT_IM_MODULE' => 'ibus'
+    'QT_QPA_PLATFORMTHEME' => 'appmenu-qt5'
+    'LC_IDENTIFICATION' => 'ru_RU.UTF-8'
+    'PWD' => '/var/www/play.pe/_protected'
+    'JOB' => 'gnome-session'
+    'XMODIFIERS' => '@im=ibus'
+    'GNOME_KEYRING_PID' => '2713'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/ubuntu.mandatory.path'
+    'LC_MEASUREMENT' => 'ru_RU.UTF-8'
+    'COMPIZ_CONFIG_PROFILE' => 'ubuntu'
+    'IM_CONFIG_PHASE' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'SESSIONTYPE' => 'gnome-session'
+    'SHLVL' => '1'
+    'HOME' => '/home/kate'
+    'XDG_SEAT' => 'seat0'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'UPSTART_INSTANCE' => ''
+    'UPSTART_EVENTS' => 'started starting'
+    'LOGNAME' => 'kate'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-wMiSOa0gVJ'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/'
+    'QT4_IM_MODULE' => 'xim'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'INSTANCE' => 'Unity'
+    'TEXTDOMAIN' => 'im-config'
+    'UPSTART_JOB' => 'unity-settings-daemon'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Unity'
+    'GTK_IM_MODULE' => 'ibus'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'ru_RU.UTF-8'
+    'TEXTDOMAINDIR' => '/usr/share/locale/'
+    'LC_NAME' => 'ru_RU.UTF-8'
+    'XAUTHORITY' => '/home/kate/.Xauthority'
+    'COLORTERM' => 'gnome-terminal'
+    'OLDPWD' => '/var/www/play.pe'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1441977614.9828
+    'REQUEST_TIME' => 1441977614
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]

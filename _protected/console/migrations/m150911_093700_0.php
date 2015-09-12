@@ -15,11 +15,12 @@ class m150911_093700_0 extends Migration
         }
         
         $this->createTable('{{%application}}', [
-                'id' => Schema::TYPE_PK,
-                'name' => Schema::TYPE_STRING . ' NOT NULL',
-                'info' => Schema::TYPE_TEXT,
-                'pic' => Schema::TYPE_BOOLEAN,
-                ], $tableOptions);
+            'id' => Schema::TYPE_PK,
+            'name' => Schema::TYPE_STRING . ' NOT NULL',
+            'info' => Schema::TYPE_TEXT,
+            'group_id' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'pic' => Schema::TYPE_BOOLEAN,
+        ], $tableOptions);
     }
 
     public function down()
