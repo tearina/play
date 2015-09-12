@@ -75,8 +75,6 @@ class Application extends \yii\db\ActiveRecord
     {//$this -> pic_file = UploadedFile::getInstance($this, 'pic_file');
         //var_dump($this->pic_file); die;
         if ($this -> pic_file){
-            //$this -> file = UploadedFile::getInstance($this, 'file');
-            //var_dump($this -> file);die;
             $this -> pic = 1;
         }
         else

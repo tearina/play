@@ -16,12 +16,14 @@ class ApplicationController extends \yii\web\Controller
 
 
     public function actionCreate()
-    {//var_dump(Yii::$app->request->post());die;
+    {
         $model = new Application();
+        $dir = Yii::getAlias('@webroot') . '/uploads/';
         if ($model -> load(Yii::$app->request->post())){
-            $image = UploadedFile::getInstance($model, 'pic_file');
-            if ($model->save())
-                $model -> pic_file -> saveAs("uploads/application/" . $model -> id . '.jpg');
+            if($file = UploadedFile::getInstance($model, 'pic_file'))
+                $model-> pic_file = $file;
+            if ($model->save() && $file)
+                $file -> saveAs($dir . $model -> id . '.jpg');
             $this -> redirect(array('index'));
         }
         else
