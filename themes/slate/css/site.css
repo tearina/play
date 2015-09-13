@@ -215,3 +215,7 @@ hr.article-devider {
 h1{
     display: inline-block;
 }
+
+.group-list .active{
+    background-color: #545858;
+}

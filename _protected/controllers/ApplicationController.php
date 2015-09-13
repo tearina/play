@@ -15,8 +15,10 @@ class ApplicationController extends \yii\web\Controller
     {
         $model = new Application();
         $group_id = (array_key_exists ($group_id, $model -> groupList)) ? (int) $group_id : null ;
+        //get dataProvider
         $searchModel = new ApplicationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->post(), $group_id);
+        //
         return $this->render('index', [
                 'model' => $model,
                 'searchModel' => $searchModel,

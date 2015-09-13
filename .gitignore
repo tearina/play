@@ -31,3 +31,6 @@ phpunit.phar
 
 # upload
 /uploads/application/
+
+# runtime
+/_protected/runtime/

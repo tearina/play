@@ -10,16 +10,16 @@ use yii\helpers\Url;
 
 <?php $form = ActiveForm::begin(['action' => '/application/index', 'options' => ['class' => 'form-inline pull-right']]); ?>
     <?= $form->field($searchModel, 'name', ['template' => "{input}{hint}"]) ?>
-    <?= Html::submitButton('Поиск', ['class' => 'btn btn-default']) ?>
+    <?= Html::submitButton('Поиск', ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>
 
 <div class=" application-list">
     <div class="row">
         <div class="col-sm-6 col-md-3">
-            <div class="list-group">
+            <div class="list-group group-list">
                 <?php foreach($model -> groupList as $id => $group): ?>
                     <a href="<?= Url::to(['application/index', 'group_id' => $id]) ?>"
-                        class="list-group-item<?php if($id === $group_id) echo ' disabled'; ?>">
+                        class="list-group-item<?php if($id === $group_id) echo ' active'; ?>">
                         <?= $group ?>
                     </a>
                 <?php endforeach; ?>

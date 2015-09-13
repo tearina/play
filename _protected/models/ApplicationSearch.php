@@ -37,8 +37,7 @@ class ApplicationSearch extends Application
      * Creates data provider instance with search query applied
      *
      * @param array   $params
-     * @param integer $pageSize  The number of results to be displayed per page.
-     * @param boolean $published Whether or not application have to be published.
+     * @param integer $group_id  The number of application group.
      *
      * @return ActiveDataProvider
      */

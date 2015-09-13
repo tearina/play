@@ -72,28 +72,11 @@ class Application extends \yii\db\ActiveRecord
     }
     
     public function beforeSave($insert)
-    {//$this -> pic_file = UploadedFile::getInstance($this, 'pic_file');
-        //var_dump($this->pic_file); die;
-        if ($this -> pic_file){
-            $this -> pic = 1;
-        }
-        else
-            $this -> pic = 0;
+    {
+        $this -> pic = ($this -> pic_file)? 1 : 0;
         return parent::beforeSave($insert);
     }
-    
-    public function afterSave($insert, $changedAttributes)
-    {
-        /*if ($this -> pic_file){
-            if (!is_dir("uploads/application")){
-                mkdir("uploads/application");
-                chmod("uploads/application", 777);
-            }
-            $this -> file->saveAs("uploads/application/" . $this -> id . '.jpg');
-        }*/
-        return parent::afterSave($insert, $changedAttributes);
-    }
-    
+
     /**
      * Returns the array of group values.
      *

@@ -9,7 +9,7 @@
 ?>
 <div class="application-add-form">
 
-    <?php $form = ActiveForm::begin(['id' => 'application-add-form', 'options' => ['enctype' => 'multipart/form-data']]) ?>
+    <?php $form = ActiveForm::begin(['id' => 'application-add-form', 'options' => ['enctype' => 'multipart/form-data', 'class' => 'form-horizontal col-sm-8']]) ?>
 
     <?= $form -> field($model, 'name');?>
 
@@ -20,7 +20,7 @@
     <?= $form -> field($model, 'pic_file') -> fileInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Создать'), ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Создать'), ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -5,10 +5,11 @@ $params = require(__DIR__ . '/params.php');
 
 $config = [
     'id' => 'basic',
-    'name' => 'My Company',
+    'name' => 'Application',
     //'language' => 'sr',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' => 'application',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) 
