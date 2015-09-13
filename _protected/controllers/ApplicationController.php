@@ -46,14 +46,26 @@ class ApplicationController extends \yii\web\Controller
     {
         $model = new Application();
         if ($model -> load(Yii::$app->request->post())){
-            $puth = Yii::getAlias('@webroot') . '/uploads/application/';
             if($file = UploadedFile::getInstance($model, 'pic_file'))
                 $model-> pic_file = $file;
             if ($model->save() && $file)
-                $file -> saveAs($puth . $model -> id . '.jpg');
+                $file -> saveAs($this->getApplicationPath() . $model -> id . '.jpg');
             $this -> redirect(array('index'));
         }
         else
             return $this->render('create', ['model' => $model]);
+    }
+    /**
+     * Get path to application upload
+     * @return string
+     */
+    private function getApplicationPath()
+    {
+        $path = Yii::getAlias('@webroot') . '/uploads/application/';
+        if (!is_dir($path)){
+            mkdir($path, 0777);
+            chmod($path, 0777);
+        }
+        return $path;
     }
 }
