@@ -52,7 +52,7 @@ class Application extends \yii\db\ActiveRecord
             [['info'], 'string'],
             [['pic'], 'integer'],
             [['pic_file'], 'safe'],
-            [['pic_file'], 'image', 'extensions' => 'jpg', 'message' => 'Файл должен быть с расширением jpg']
+            [['pic_file'], 'image', 'extensions' => 'jpg', 'checkExtensionByMimeType'=>false, 'message' => 'Файл должен быть с расширением jpg']
         ];
     }
 
