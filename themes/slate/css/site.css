@@ -200,8 +200,14 @@ hr.article-devider {
 .application-list .item img{
     width: 150px;  height: 150px;
 }
-.application-list .item .caption p{
+.application-list .item span{
+    margin: 10px 0;
+    display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.application-view img{
+    width: 200px; height: 200px;
 }

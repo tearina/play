@@ -23,7 +23,24 @@ class ApplicationController extends \yii\web\Controller
         ]);
     }
 
-
+    /**
+     * Displays a single Application model.
+     *
+     * @param  integer $id
+     * @return mixed
+     */
+    public function actionView($id)
+    {
+        if (!$model = Application::findOne($id))
+            throw new NotFoundHttpException('The requested page does not exist.');
+        return $this->render('view', [
+                'model' => $model,
+                ]);
+    }
+    
+    
+    
+    
     public function actionCreate()
     {
         $model = new Application();
