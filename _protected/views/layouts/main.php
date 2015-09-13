@@ -39,12 +39,7 @@ AppAsset::register($this);
                 'items' => $menuItems,
             ]);
         ?>
-        <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Искать приложение">
-            </div>
-            <button type="submit" class="btn btn-default">Поиск</button>
-        </form>
+
         <?php
             NavBar::end();
         ?>

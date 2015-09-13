@@ -6,20 +6,22 @@ use app\models\Application;
 use app\models\ApplicationSearch;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
+use yii\helpers\Url;
 use Yii;
  
 class ApplicationController extends \yii\web\Controller
 {
-    public function actionIndex()
+    public function actionIndex($group_id = null)
     {
         $model = new Application();
+        $group_id = (array_key_exists ($group_id, $model -> groupList)) ? (int) $group_id : null ;
         $searchModel = new ApplicationSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        
+        $dataProvider = $searchModel->search(Yii::$app->request->post(), $group_id);
         return $this->render('index', [
                 'model' => $model,
                 'searchModel' => $searchModel,
                 'dataProvider' => $dataProvider,
+                'group_id' => $group_id
         ]);
     }
 
@@ -37,10 +39,7 @@ class ApplicationController extends \yii\web\Controller
                 'model' => $model,
                 ]);
     }
-    
-    
-    
-    
+
     public function actionCreate()
     {
         $model = new Application();

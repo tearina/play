@@ -18,8 +18,7 @@ class ApplicationSearch extends Application
     public function rules()
     {
         return [
-            [['id', 'group_id', 'pic'], 'integer'],
-            [['name', 'info'], 'string'],
+            [['name'], 'string'],
         ];
     }
 
@@ -43,25 +42,23 @@ class ApplicationSearch extends Application
      *
      * @return ActiveDataProvider
      */
-    public function search($params, $pageSize = false, $published = false)
+    public function search($params, $group_id)
     {
         $query = Application::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['id' => SORT_DESC]],
-            'pagination' => [
-                'pageSize' => $pageSize,
-            ]
+            'sort'=> ['defaultOrder' => ['id' => SORT_DESC]]
         ]);
 
-        if (!($this->load($params) && $this->validate())) {
+        if (!($this->load($params) && $this->validate()) && $group_id === null) {
             return $dataProvider;
         }
-
-        $query->andFilterWhere([
-            'id' => $this->id,
-        ]);
+        
+        if($group_id !== null)
+            $query->andFilterWhere([
+                'group_id' => $group_id,
+            ]);
 
         $query->andFilterWhere(['like', 'name', $this->name]);
 

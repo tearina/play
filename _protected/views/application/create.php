@@ -19,10 +19,8 @@
 
     <?= $form -> field($model, 'pic_file') -> fileInput() ?>
 
-    <div class="form-group">     
-        <?= Html::submitButton(Yii::t('app', 'Create'), ['class' => 'btn btn-success']) ?>
-
-        <?= Html::a(Yii::t('app', 'Cancel'), ['/'], ['class' => 'btn btn-default']) ?>
+    <div class="form-group">
+        <?= Html::submitButton(Yii::t('app', 'Создать'), ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
