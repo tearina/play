@@ -26,57 +26,26 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => Yii::t('app', Yii::$app->name),
-                'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-default navbar-fixed-top',
+                    'class' => 'navbar navbar-default',
                 ],
             ]);
 
-            // everyone can see Home page
-            $menuItems[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
-
-            // we do not need to display Article/index, About and Contact pages to editor+ roles
-            if (!Yii::$app->user->can('editor')) 
-            {
-                $menuItems[] = ['label' => Yii::t('app', 'Articles'), 'url' => ['/article/index']];
-                $menuItems[] = ['label' => Yii::t('app', 'About'), 'url' => ['/site/about']];
-                $menuItems[] = ['label' => Yii::t('app', 'Contact'), 'url' => ['/site/contact']];
-            }
-
-            // display Article admin page to editor+ roles
-            if (Yii::$app->user->can('editor'))
-            {
-                $menuItems[] = ['label' => Yii::t('app', 'Articles'), 'url' => ['/article/admin']];
-            }            
-
-            // display Users to admin+ roles
-            if (Yii::$app->user->can('admin'))
-            {
-                $menuItems[] = ['label' => Yii::t('app', 'Users'), 'url' => ['/user/index']];
-            }
-            
-            // display Signup and Login pages to guests of the site
-            if (Yii::$app->user->isGuest) 
-            {
-                $menuItems[] = ['label' => Yii::t('app', 'Signup'), 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']];
-            }
-            // display Logout to all logged in users
-            else 
-            {
-                $menuItems[] = [
-                    'label' => Yii::t('app', 'Logout'). ' (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
-            }
+            $menuItems[] = ['label' => 'Приложения', 'url' => ['/application/index']];
+            $menuItems[] = ['label' => 'Добавить приложение', 'url' => ['/application/create']];
 
             echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
+                'options' => ['class' => 'navbar-nav navbar-head'],
                 'items' => $menuItems,
             ]);
-
+        ?>
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Искать приложение">
+            </div>
+            <button type="submit" class="btn btn-default">Поиск</button>
+        </form>
+        <?php
             NavBar::end();
         ?>
 

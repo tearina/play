@@ -12,10 +12,6 @@ body {
     padding: 0 0 60px;
 }
 
-.wrap > .container {
-    padding: 70px 15px 20px;
-}
-
 .jumbotron {
     text-align: center;
 }
@@ -193,4 +189,19 @@ hr.article-devider {
 #form-user table,
 #reset-password-form table {
     background-color: transparent;
+}
+
+/*application list*/
+.application-list .item{
+    width: 150px; height: 200px;
+    margin: 5px;
+    float: left;
+}
+.application-list .item img{
+    width: 150px;  height: 150px;
+}
+.application-list .item .caption p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
